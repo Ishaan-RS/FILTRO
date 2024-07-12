@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FILTRO</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/filtro.css') }}">
+</head>
+<body>
+  <nav>
+    <ul>
+    <li>
+      <img class="image" src="{{ url_for('static',filename='image/Chemflask.png') }}" alt="Image description">
+      <a href="#how-to-use">FILTRO</a>
+      <div class="popup-box3">
+        <p>1. Select all the files you wish to convert to xlsx and summarize.</p><br>
+        <p>2. Firstly download the files in xlsx format by clicking the "download xlsx" button.</p><br>
+        <p>3. Then to download the summary in xlsx file, click the "download Summary" button.</p><br>
+        <p>4. Use it as you wish ;]</p><br><br>
+        <p>It is required to download the xlsx files first to get the summary.</p>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+  <div class="container0">
+    
+    <div class="container">
+      
+      <h1 >Please select your files</h1>
+      
+      <form id="fileForm" action="/process-files" method="post" enctype="multipart/form-data">
+        
+        <input type="file" name="files[]" id="fileInput" multiple onchange="updateFileName()">
+        
+        <p id="fileNames"></p>
+
+        <button class="btn" type="submit" value="convert">Download XLSX</button>
+      
+      </form>
+      <form action="/summary-files" method="post" enctype="multipart/form-data">
+
+        <button class="btn1" type="submit" value="summary">Download Summary</button>
+      
+      </form>
+      
+</div>
+</div>
+
+
+<nav class="nav1">
+<ul>
+<h11>DEVELOPED BY:-</h11>
+<h12>ISHAAN MALHOTRA,</h12>
+<h13>ISHAAN SHARMA</h13>
+</ul>
+      <script>
+        function updateFileName() {
+        var fileInput = document.getElementById("fileInput");
+        var fileNamesElement = document.getElementById("fileNames");
+        
+        if (fileInput.files.length > 0) {
+          var fileNames = Array.from(fileInput.files).map(file => file.name);
+          fileNamesElement.textContent = "The files you have chosen are: " + fileNames.join(", ");
+        } else {
+          fileNamesElement.textContent = 'No files chosen';
+        }
+        }
+        </script>
+</nav>
+</body>
+
+</html>
