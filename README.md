@@ -15,3 +15,10 @@ Then that data is summarized on the following basis:
 And this summary file is generated as an excel sheet at the press of a button.
 
 ![image](https://github.com/user-attachments/assets/c623286b-1bb0-4c06-9439-a2c7e7bf7273)
+The web app
+
+![image](https://github.com/user-attachments/assets/ce7d0e03-a621-41ff-8345-6df43a84aa20)
+All the txt files converted into xlsx files
+
+![image](https://github.com/user-attachments/assets/9c4bd4b7-9adb-4e46-add0-7e1ec2abf789)
+Summary generated
